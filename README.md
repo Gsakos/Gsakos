@@ -119,7 +119,7 @@ At-risk customer segment identification using behavioral data. Executive churn d
 - 💡 Retention recommendations
 - 📈 LTV impact modeling
 
-[![Coming Soon](https://img.shields.io/badge/Coming%20Soon-6B7280?style=for-the-badge&logo=github&logoColor=white)](#)
+[![View Project](https://img.shields.io/badge/View%20Project-0D1B2A?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Gsakos/customer-retention-churn)
 
 </td>
 <td width="50%" valign="top">
@@ -137,7 +137,7 @@ End-to-end sales performance analysis built from real solar industry experience 
 - ☀️ Solar industry KPIs
 - 🔮 Revenue forecasting
 
-[![Coming Soon](https://img.shields.io/badge/Coming%20Soon-6B7280?style=for-the-badge&logo=github&logoColor=white)](#)
+[![View Project](https://img.shields.io/badge/View%20Project-0D1B2A?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Gsakos/solar-sales-performance)
 
 </td>
 </tr>
