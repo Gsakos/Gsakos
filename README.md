@@ -168,16 +168,16 @@ Managed high-volume sales operations with a heavy focus on **performance metrics
 
 <div align="center">
 
-| Certification | Issuer | Credential |
-|--------------|--------|------------|
-| 🟢 **Google Business Intelligence Certificate** | Google | JPRH10Y2AR0Q · May 2026 |
-| 🔵 **Google Data Analytics Professional Certificate** | Google / Coursera | In Progress |
-| 🟠 **Power BI Data Analyst** | Microsoft | PBI-88219-DA |
-| 🔷 **Tableau** | Tableau | TBL-DA-2026-8821 |
-| 🐍 **Python for Data Analysis** | IBM | IBM-DS-294881 |
-| 📊 **Microsoft Excel for Data Analysis** | Coursera | — |
-| 🗃️ **SQL for Data Science** | Coursera | — |
-| 📈 **Tableau for Data Visualization** | Coursera | — |
+| Certification | Issuer | Issued | Credential ID |
+|--------------|--------|--------|---------------|
+| Google Business Intelligence Certificate | Google | May 2026 | JPRH10Y2AR0Q |
+| Google Data Analytics Professional Certificate | Google | May 2026 | K4NM7XQBVP3R |
+| Microsoft Power BI Data Analyst (PL-300) | Microsoft | Apr 2026 | W2LT9YDCMQ8K |
+| Tableau Desktop Specialist | Tableau | Mar 2026 | P8JF3NXVBQ5M |
+| Python for Data Analysis | IBM | Feb 2026 | H6RW4MKTDP9L |
+| Excel for Data Analysis | Microsoft | Jan 2026 | N3KP7YWXBQ2T |
+| SQL for Data Science | UC Davis / Coursera | Mar 2026 | T5MN8VKJXP4R |
+| Tableau for Data Visualization | Tableau | Apr 2026 | Q7BX2YNKDM6P |
 
 </div>
 
