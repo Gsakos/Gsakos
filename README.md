@@ -91,6 +91,8 @@ Analyzed **200 CRM leads** across 6 lead sources and 5 sales reps over 6 months.
 
 [![View Project](https://img.shields.io/badge/View%20Project-0D1B2A?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Gsakos/sales-funnel-analysis)
 
+
+
 </td>
 <td width="50%" valign="top">
 
