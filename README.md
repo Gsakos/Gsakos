@@ -89,7 +89,6 @@ Analyzed **200 CRM leads** across 6 lead sources and 5 sales reps over 6 months.
 ### 📈 Marketing ROI & Ad Spend Analysis
 **Tools:** Excel · Looker Studio · Python
 
-*(Coming Soon)*
 
 Cross-channel marketing performance comparing CPL, conversion rate, and ROI across Meta Ads, Google Ads, and organic channels.
 
@@ -109,7 +108,6 @@ Cross-channel marketing performance comparing CPL, conversion rate, and ROI acro
 ### 🔄 Customer Retention & Churn Analysis
 **Tools:** SQL · Power BI · Tableau
 
-*(Coming Soon)*
 
 At-risk customer segment identification using behavioral data. Executive churn dashboard with LTV impact modeling and retention strategy recommendations.
 
@@ -127,7 +125,6 @@ At-risk customer segment identification using behavioral data. Executive churn d
 ### ☀️ Solar Sales Performance Dashboard
 **Tools:** SQL · Power BI · Excel
 
-*(Coming Soon)*
 
 End-to-end sales performance analysis built from real solar industry experience at Sunniva Solar. Rep leaderboards, pipeline health, lead source ROI, and revenue forecasting.
 
