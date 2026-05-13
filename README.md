@@ -187,11 +187,6 @@ Managed high-volume sales operations with a heavy focus on **performance metrics
 
 <div align="center">
 
-```
-Business Problem  →  Data Collection  →  Cleaning & Validation
-       ↓                                          ↓
- Recommendations  ←  Insights  ←  Analysis & Visualization
-```
 
 | Phase | What I Do |
 |-------|-----------|
