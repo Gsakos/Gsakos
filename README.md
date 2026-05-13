@@ -24,6 +24,8 @@
 
 ## 👋 About Me
 
+<div align="center">
+
 I'm a **data analyst and business intelligence professional** based in Las Vegas, NV — with a background spanning data analysis, sales leadership, CRM operations, and revenue growth across the solar and marketing industries.
 
 I spent 2+ years as a **Data Analyst at Sunniva Solar**, building dashboards, analyzing sales performance, tracking lead generation KPIs, and delivering operational efficiency insights to leadership. Before that, I led high-volume sales operations as an **Executive Sales Leader at Momentum Solar**, managing pipelines, performance metrics, and customer acquisition strategies.
@@ -65,6 +67,8 @@ I don't just build dashboards — I build **decisions**.
 ---
 
 ## 📁 Featured Projects
+
+<div align="center">
 
 <table>
 <tr>
@@ -203,7 +207,7 @@ Managed high-volume sales operations with a heavy focus on **performance metrics
 
 <div align="center">
 
-🛠 Core Skills
+ Core Skills
 
 | Analytics & BI | Technical Tools | Business & Ops |
 |---------------|----------------|----------------|
