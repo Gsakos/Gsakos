@@ -142,20 +142,6 @@ End-to-end sales performance analysis built from real solar industry experience 
 
 ---
 
-## 📊 GitHub Stats
-
-<div align="center">
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=Gsakos&show_icons=true&theme=dark&include_all_commits=true&count_private=true&bg_color=0D1B2A&title_color=1A56DB&icon_color=1A56DB&text_color=ffffff&border_color=1B3A5C"/>
-&nbsp;
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gsakos&layout=compact&theme=dark&bg_color=0D1B2A&title_color=1A56DB&text_color=ffffff&border_color=1B3A5C"/>
-
-</div>
-
-<div align="center">
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Gsakos&theme=dark&background=0D1B2A&ring=1A56DB&fire=E97627&currStreakLabel=1A56DB&border=1B3A5C"/>
-</div>
-
 ---
 
 ## 💼 Professional Experience
