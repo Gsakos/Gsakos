@@ -25,8 +25,10 @@
 <div align="center">
 
 👋 About Me
+---
 
 <div align="center">
+
 
 I'm a **data analyst and business intelligence professional** based in Las Vegas, NV — with a background spanning data analysis, sales leadership, CRM operations, and revenue growth across the solar and marketing industries.
 
