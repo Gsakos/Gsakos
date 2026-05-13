@@ -204,6 +204,7 @@ Managed high-volume sales operations with a heavy focus on **performance metrics
 <div align="center">
 
 ```
+<div align="center">
 ## Core Skills
 
 **Analytics & Business Intelligence**
