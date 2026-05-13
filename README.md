@@ -203,34 +203,17 @@ Managed high-volume sales operations with a heavy focus on **performance metrics
 
 <div align="center">
 
-```
-<div align="center">
-## Core Skills
+🛠 Core Skills
 
-**Analytics & Business Intelligence**
-- Sales Funnel Analysis & Conversion Optimization
-- Marketing ROI, ROAS & Ad Spend Analysis
-- Customer Retention & Churn Analysis
-- Financial Data Analysis & Revenue Reporting
-- KPI Development & Executive Dashboard Design
-- CRM Analytics & Lead Generation Performance
-
-**Technical Tools**
-- SQL — Data querying, aggregation, funnel analysis
-- Microsoft Excel & Google Sheets — Advanced analysis & modeling
-- Power BI — Dashboard development & business reporting
-- Tableau — Data visualization & executive reporting
-- Looker Studio — Marketing & operational dashboards
-- Python — Data analysis (in progress)
-
-**Business & Operations**
-- Sales Operations & Pipeline Management
-- CRM Systems — HubSpot, Salesforce concepts
-- Meta Ads & Paid Media Performance Analysis
-- Revenue Operations & Business Scaling
-- Stakeholder Reporting & Presentation
-```
-
+| Analytics & BI | Technical Tools | Business & Ops |
+|---------------|----------------|----------------|
+| Sales Funnel Analysis | SQL | Sales Pipeline Management |
+| Marketing ROI & ROAS | Excel — Advanced | CRM Systems & HubSpot |
+| Customer Retention & Churn | Google Sheets | Meta Ads & Paid Media |
+| Financial Data Analysis | Power BI | Revenue Operations |
+| KPI Development | Tableau | Lead Generation Analytics |
+| Executive Dashboard Design | Looker Studio | Stakeholder Reporting |
+| CRM Performance Reporting | Python *(growing)* | Business Scaling |
 ---
 
 ## 🤝 Let's Connect
