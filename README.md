@@ -185,6 +185,8 @@ Managed high-volume sales operations with a heavy focus on **performance metrics
 
 ## 🧠 My Analytics Approach
 
+<div align="center">
+
 ```
 Business Problem  →  Data Collection  →  Cleaning & Validation
        ↓                                          ↓
@@ -203,6 +205,8 @@ Business Problem  →  Data Collection  →  Cleaning & Validation
 ---
 
 ## 📌 Core Skills
+
+<div align="center">
 
 ```
 Data Analytics          ████████████████████  Expert
