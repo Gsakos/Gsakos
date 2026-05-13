@@ -99,7 +99,7 @@ Cross-channel marketing performance comparing CPL, conversion rate, and ROI acro
 - 🔁 Attribution modeling
 - 📊 Executive-ready dashboard
 
-[![Coming Soon](https://img.shields.io/badge/Coming%20Soon-6B7280?style=for-the-badge&logo=github&logoColor=white)](#)
+[![View Project](https://img.shields.io/badge/View%20Project-0D1B2A?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Gsakos/marketing-roi-analysis)
 
 </td>
 </tr>
