@@ -5,6 +5,8 @@ import { useParams, useSearchParams } from "next/navigation";
 import { ContractDocument } from "@/components/ContractDocument";
 import { SignatureDisplay } from "@/components/SignatureDisplay";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
+import { GlassCard } from "@/components/ui/GlassCard";
+import { Button } from "@/components/ui/Button";
 import type { DraftFacingContract } from "@/lib/types";
 
 export default function DraftPage() {
@@ -85,13 +87,19 @@ export default function DraftPage() {
   }
 
   if (loading) {
-    return <main className="mx-auto max-w-2xl px-4 py-12 text-slate-500">Loading...</main>;
+    return (
+      <main className="mx-auto max-w-2xl px-4 py-12 text-slate-500 dark:text-slate-400">
+        Loading...
+      </main>
+    );
   }
 
   if (error && !contract) {
     return (
       <main className="mx-auto max-w-2xl px-4 py-12">
-        <p className="text-red-600">{error}</p>
+        <GlassCard>
+          <p className="text-red-500">{error}</p>
+        </GlassCard>
       </main>
     );
   }
@@ -104,54 +112,56 @@ export default function DraftPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-12">
       <div className="no-print">
-        <p className="text-sm font-medium text-slate-500">Drafter view</p>
-        <h1 className="mt-1 text-2xl font-bold text-slate-900">{contract.title}</h1>
+        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Drafter view</p>
+        <h1 className="mt-1 text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+          {contract.title}
+        </h1>
 
         <div className="mt-4">
           <DisclaimerBanner />
         </div>
 
         {!emailSent && (
-          <div className="mt-4 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900">
+          <div className="glass mt-4 rounded-2xl border-blue-200/60 px-4 py-3 text-sm text-blue-900 dark:text-blue-200">
             Email isn&apos;t configured on this deployment (no <code>RESEND_API_KEY</code>), so
             nothing was emailed automatically. Use the &quot;Copy link&quot; buttons below to send
             each signing link yourself.
           </div>
         )}
 
-        {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
+        {error && <p className="mt-4 text-sm text-red-500">{error}</p>}
       </div>
 
-      <section className="mt-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm print-area">
+      <GlassCard strong className="mt-6 print-area">
         {isDraft ? (
           <>
-            <p className="no-print mb-2 text-sm font-medium text-slate-700">
+            <p className="no-print mb-2 text-sm font-medium text-slate-700 dark:text-slate-200">
               Review and edit the draft below before sending it out.
             </p>
             <textarea
               value={editedText}
               onChange={(e) => setEditedText(e.target.value)}
               rows={20}
-              className="no-print w-full rounded-md border border-slate-300 p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-slate-400"
+              className="glass-input no-print w-full rounded-xl p-3 font-mono text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:text-white"
             />
           </>
         ) : (
           <ContractDocument text={contract.contractText} />
         )}
-      </section>
+      </GlassCard>
 
       <div className="no-print mt-8">
-        <h2 className="text-lg font-semibold text-slate-900">
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
           {isFullySigned ? "Signatures" : "Parties"}
         </h2>
         <div className="mt-3 space-y-3">
           {contract.parties.map((party) => (
             <div key={party.id}>
               {isDraft ? (
-                <div className="flex items-center justify-between rounded-lg border border-slate-200 p-4">
+                <div className="glass flex items-center justify-between rounded-2xl p-4">
                   <div>
-                    <p className="font-medium text-slate-900">{party.name}</p>
-                    <p className="text-sm text-slate-500">
+                    <p className="font-medium text-slate-900 dark:text-white">{party.name}</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
                       {party.role} · {party.email}
                     </p>
                   </div>
@@ -162,7 +172,7 @@ export default function DraftPage() {
                   {!party.signed && (
                     <button
                       onClick={() => copyLink(party.id, party.signingUrl)}
-                      className="mt-1 text-xs font-medium text-slate-500 hover:text-slate-900"
+                      className="mt-1 text-xs font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                     >
                       {copiedPartyId === party.id ? "Copied!" : "Copy signing link"}
                     </button>
@@ -177,41 +187,22 @@ export default function DraftPage() {
       <div className="no-print mt-8 flex gap-3">
         {isDraft && (
           <>
-            <button
-              onClick={handleSave}
-              disabled={saving}
-              className="rounded-md border border-slate-300 px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
-            >
+            <Button variant="glass" onClick={handleSave} disabled={saving}>
               {saving ? "Saving..." : "Save changes"}
-            </button>
-            <button
-              onClick={handleSend}
-              disabled={sending}
-              className="rounded-md bg-slate-900 px-4 py-2 font-medium text-white hover:bg-slate-800 disabled:opacity-50"
-            >
+            </Button>
+            <Button onClick={handleSend} disabled={sending}>
               {sending ? "Sending..." : "Send for signature"}
-            </button>
+            </Button>
           </>
         )}
 
         {!isDraft && !isFullySigned && (
-          <button
-            onClick={handleSend}
-            disabled={sending}
-            className="rounded-md border border-slate-300 px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
-          >
+          <Button variant="glass" onClick={handleSend} disabled={sending}>
             {sending ? "Resending..." : "Resend to parties who haven't signed"}
-          </button>
+          </Button>
         )}
 
-        {isFullySigned && (
-          <button
-            onClick={() => window.print()}
-            className="rounded-md bg-slate-900 px-4 py-2 font-medium text-white hover:bg-slate-800"
-          >
-            Download / print PDF
-          </button>
-        )}
+        {isFullySigned && <Button onClick={() => window.print()}>Download / print PDF</Button>}
       </div>
     </main>
   );

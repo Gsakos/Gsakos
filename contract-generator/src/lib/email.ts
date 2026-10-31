@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const FROM = process.env.EMAIL_FROM || "Contract Generator <onboarding@resend.dev>";
+const FROM = process.env.EMAIL_FROM || "DealSeal <onboarding@resend.dev>";
 
 function getClient(): Resend | null {
   const key = process.env.RESEND_API_KEY;

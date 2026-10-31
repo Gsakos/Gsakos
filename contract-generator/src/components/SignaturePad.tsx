@@ -81,8 +81,8 @@ export function SignaturePad({ defaultTypedName = "", onCapture }: SignaturePadP
         <button
           type="button"
           onClick={() => setMode("typed")}
-          className={`rounded-md px-3 py-1.5 font-medium ${
-            mode === "typed" ? "bg-slate-900 text-white" : "bg-slate-100 text-slate-700"
+          className={`rounded-full px-4 py-1.5 font-medium transition ${
+            mode === "typed" ? "btn-primary" : "btn-glass text-slate-700 dark:text-slate-200"
           }`}
         >
           Type signature
@@ -90,8 +90,8 @@ export function SignaturePad({ defaultTypedName = "", onCapture }: SignaturePadP
         <button
           type="button"
           onClick={() => setMode("drawn")}
-          className={`rounded-md px-3 py-1.5 font-medium ${
-            mode === "drawn" ? "bg-slate-900 text-white" : "bg-slate-100 text-slate-700"
+          className={`rounded-full px-4 py-1.5 font-medium transition ${
+            mode === "drawn" ? "btn-primary" : "btn-glass text-slate-700 dark:text-slate-200"
           }`}
         >
           Draw signature
@@ -104,7 +104,7 @@ export function SignaturePad({ defaultTypedName = "", onCapture }: SignaturePadP
           value={typedName}
           onChange={(e) => setTypedName(e.target.value)}
           placeholder="Type your full name"
-          className="w-full rounded-md border border-slate-300 px-3 py-3 font-signature text-2xl italic focus:outline-none focus:ring-2 focus:ring-slate-400"
+          className="glass-input w-full rounded-2xl px-4 py-3 font-signature text-2xl italic text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:text-white"
         />
       ) : (
         <div>
@@ -116,13 +116,13 @@ export function SignaturePad({ defaultTypedName = "", onCapture }: SignaturePadP
             onPointerMove={handlePointerMove}
             onPointerUp={stopDrawing}
             onPointerLeave={stopDrawing}
-            className="w-full touch-none rounded-md border border-slate-300 bg-white"
+            className="w-full touch-none rounded-2xl border border-white/70 bg-white/90 shadow-inner"
             style={{ height: 150 }}
           />
           <button
             type="button"
             onClick={clearCanvas}
-            className="mt-2 text-sm font-medium text-slate-500 hover:text-slate-800"
+            className="mt-2 text-sm font-medium text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white"
           >
             Clear
           </button>

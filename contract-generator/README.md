@@ -1,9 +1,12 @@
-# Contract Generator
+# DealSeal
 
 Describe a situation, add the people involved and where it's happening, and
 [Claude](https://www.anthropic.com/claude) drafts a plain-language contract.
 You can edit it, send each party a link to review and sign it in the
 browser, and once everyone has signed, a copy is emailed out automatically.
+
+Installable as a PWA (frosted-glass, Apple-style UI) - open it on your phone
+and use "Add to Home Screen" for a full-screen, app-like experience.
 
 > **Not legal advice.** This is a convenience tool, not a law firm. The
 > generated contract has not been reviewed by an attorney. For anything

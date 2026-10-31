@@ -18,15 +18,17 @@ export function SignatureDisplay({
   signatureValue,
 }: SignatureDisplayProps) {
   return (
-    <div className="rounded-lg border border-slate-200 p-4">
+    <div className="glass rounded-2xl p-4">
       <div className="flex items-center justify-between">
         <div>
-          <p className="font-medium text-slate-900">{name}</p>
-          <p className="text-sm text-slate-500">{role}</p>
+          <p className="font-medium text-slate-900 dark:text-white">{name}</p>
+          <p className="text-sm text-slate-500 dark:text-slate-400">{role}</p>
         </div>
         <span
-          className={`rounded-full px-2.5 py-1 text-xs font-medium ${
-            signed ? "bg-emerald-100 text-emerald-700" : "bg-slate-100 text-slate-500"
+          className={`rounded-full px-3 py-1 text-xs font-medium ${
+            signed
+              ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300"
+              : "bg-slate-500/10 text-slate-500 dark:text-slate-400"
           }`}
         >
           {signed ? "Signed" : "Awaiting signature"}
@@ -34,12 +36,14 @@ export function SignatureDisplay({
       </div>
 
       {signed && signatureValue ? (
-        <div className="mt-3 border-t border-slate-100 pt-3">
+        <div className="mt-3 border-t border-white/30 pt-3 dark:border-white/10">
           {signatureType === "drawn" ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={signatureValue} alt={`${name}'s signature`} className="h-16" />
           ) : (
-            <p className="font-signature text-2xl italic text-slate-800">{signatureValue}</p>
+            <p className="font-signature text-2xl italic text-slate-800 dark:text-slate-100">
+              {signatureValue}
+            </p>
           )}
           {signedAt && (
             <p className="mt-1 text-xs text-slate-400">
