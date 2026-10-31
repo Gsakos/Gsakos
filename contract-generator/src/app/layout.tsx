@@ -5,7 +5,7 @@ import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 export const metadata: Metadata = {
   title: "DealSeal",
   description:
-    "Describe the situation, add the parties, and get a sendable, signable contract - drafted by Claude.",
+    "Describe the situation, add the parties, and get a sendable, signable contract in minutes.",
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -25,7 +25,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#5b6cf0",
+  themeColor: "#211b4e",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

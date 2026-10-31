@@ -17,7 +17,7 @@ interface SignBody {
 
 export async function POST(request: Request, { params }: RouteParams) {
   const { id } = await params;
-  const contract = getContract(id);
+  const contract = await getContract(id);
   if (!contract) {
     return NextResponse.json({ error: "Contract not found." }, { status: 404 });
   }
@@ -74,7 +74,7 @@ export async function POST(request: Request, { params }: RouteParams) {
     contract.status = "partially_signed";
   }
 
-  saveContract(contract);
+  await saveContract(contract);
 
   if (allSigned) {
     for (const p of contract.parties) {

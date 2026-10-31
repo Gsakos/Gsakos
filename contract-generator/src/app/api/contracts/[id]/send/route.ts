@@ -8,7 +8,7 @@ type RouteParams = { params: Promise<{ id: string }> };
 
 export async function POST(request: Request, { params }: RouteParams) {
   const { id } = await params;
-  const contract = getContract(id);
+  const contract = await getContract(id);
   if (!contract) {
     return NextResponse.json({ error: "Contract not found." }, { status: 404 });
   }
@@ -40,7 +40,7 @@ export async function POST(request: Request, { params }: RouteParams) {
   if (isFirstSend) {
     contract.status = "sent";
     contract.sentAt = new Date().toISOString();
-    saveContract(contract);
+    await saveContract(contract);
   }
 
   return NextResponse.json({

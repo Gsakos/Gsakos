@@ -108,7 +108,7 @@ export async function POST(request: Request) {
     fullySignedAt: null,
   };
 
-  saveContract(contract);
+  await saveContract(contract);
 
   return NextResponse.json({ id: contract.id, draftToken: contract.draftToken });
 }

@@ -81,14 +81,13 @@ export default function HomePage() {
           <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
             DealSeal
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400">Drafted by Claude, sealed by you</p>
+          <p className="text-sm text-slate-500 dark:text-slate-400">Draft it. Send it. Seal it.</p>
         </div>
       </div>
 
       <p className="text-slate-600 dark:text-slate-300">
-        Describe the situation, add the people involved, and Claude will draft a plain-language
-        agreement you can edit, send out for signature, and have emailed back once everyone&apos;s
-        signed.
+        Describe the situation, add the people involved, and get a plain-language agreement you
+        can edit, send out for signature, and have emailed back once everyone&apos;s signed.
       </p>
 
       <div className="mt-6">

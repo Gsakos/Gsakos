@@ -6,7 +6,7 @@ type RouteParams = { params: Promise<{ id: string }> };
 
 export async function GET(request: Request, { params }: RouteParams) {
   const { id } = await params;
-  const contract = getContract(id);
+  const contract = await getContract(id);
   if (!contract) {
     return NextResponse.json({ error: "Contract not found." }, { status: 404 });
   }
@@ -35,7 +35,7 @@ interface PatchBody {
 
 export async function PATCH(request: Request, { params }: RouteParams) {
   const { id } = await params;
-  const contract = getContract(id);
+  const contract = await getContract(id);
   if (!contract) {
     return NextResponse.json({ error: "Contract not found." }, { status: 404 });
   }
@@ -66,7 +66,7 @@ export async function PATCH(request: Request, { params }: RouteParams) {
   }
 
   contract.contractText = contractText;
-  saveContract(contract);
+  await saveContract(contract);
 
   return NextResponse.json({ view: "draft", contract: toDraftFacing(contract) });
 }

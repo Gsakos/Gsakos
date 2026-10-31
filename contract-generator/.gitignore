@@ -11,8 +11,6 @@ build
 .env.local
 .env*.local
 
-# generated contracts (local file-based storage - do not commit real data)
-data/contracts/*.json
 
 # misc
 .DS_Store

@@ -40,9 +40,26 @@ Fill in `.env.local`:
 | Variable | Required | Purpose |
 |---|---|---|
 | `ANTHROPIC_API_KEY` | Yes | Drafts the contract. Get one at [console.anthropic.com](https://console.anthropic.com/settings/keys). |
+| `SUPABASE_URL` | Yes | Where contracts are stored. Create a free project at [supabase.com](https://supabase.com) - find this under Project Settings -> Data API. |
+| `SUPABASE_SERVICE_ROLE_KEY` | Yes | Project Settings -> API Keys -> `service_role` (not the anon/publishable key). Server-side only, never exposed to the browser. |
 | `RESEND_API_KEY` | No | Sends the signing-request and fully-executed emails via [Resend](https://resend.com). Without it, the app still works - signing links are shown in the UI for you to copy/send yourself instead of being emailed automatically. |
 | `EMAIL_FROM` | No | The "from" address for outgoing email. Defaults to Resend's shared sandbox sender, which works for testing but looks less trustworthy to recipients - verify your own domain with Resend for real use. |
 | `NEXT_PUBLIC_APP_URL` | Yes (in production) | The public URL this app is deployed at, used to build signing links. Defaults to `http://localhost:3000` for local dev. |
+
+In your Supabase project's SQL Editor, run once:
+
+```sql
+create table public.contracts (
+  id uuid primary key,
+  data jsonb not null,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+alter table public.contracts enable row level security;
+
+create index contracts_status_idx on public.contracts (((data ->> 'status')));
+```
 
 Run it:
 
@@ -52,18 +69,20 @@ npm run dev
 
 ## Deploying
 
-This is a standard Next.js app - it deploys to Vercel, Render, Railway, Fly.io,
-or any Node host. Set the environment variables above in your host's
-dashboard, and set `NEXT_PUBLIC_APP_URL` to the real deployed URL.
+This is a standard Next.js app backed by Postgres (Supabase), so it works on
+any host, including fully serverless ones (Vercel, Netlify) - unlike plain
+file storage, contract data survives across requests and cold starts.
 
-**Storage note:** contracts are currently stored as JSON files under
-`data/contracts/`. That's zero-setup and fine for local use or a single
-always-on server with persistent disk. It will **not** work reliably on a
-stateless/serverless host (e.g. Vercel's default deployment) because the
-filesystem isn't shared or persistent across invocations. For that kind of
-deployment, swap `src/lib/store.ts` for a real database (Postgres, etc.) -
-`getContract`/`saveContract` are the only two functions the rest of the app
-calls, so the swap is contained to that one file.
+**Netlify:** create a new site from this repo, set the site's **Base
+directory** to `contract-generator` (this is a monorepo - the app lives in
+that subfolder), and add the environment variables above in Site
+configuration -> Environment variables. A `netlify.toml` in this folder
+already configures the build command and the official Next.js plugin. Once
+deployed, set `NEXT_PUBLIC_APP_URL` to the Netlify URL you're given and
+redeploy.
+
+**Vercel / Render / Railway / Fly.io:** same environment variables, same
+build (`npm install && npm run build`) and start (`npm start`) commands.
 
 ## Security model (MVP)
 
@@ -82,6 +101,12 @@ for everyday agreements - they are **not** a certified e-signature product
 (no identity verification, no tamper-evident seal). For agreements that need
 that level of rigor, use a provider like DocuSign instead.
 
+The `contracts` table has Row Level Security enabled with **no policies**,
+so the token/key checks above are the only thing gating access - and even if
+the anon/publishable key ever leaked, it would have zero access to the
+table. Only the server-side `service_role` key (used exclusively in API
+routes, never sent to the browser) can read or write it.
+
 ## Project structure
 
 ```
@@ -94,7 +119,7 @@ src/
   lib/
     anthropic.ts             Calls Claude to draft the contract text
     email.ts                 Sends signing-request / fully-executed emails via Resend
-    store.ts                 File-based contract storage (swap for a DB in production)
+    store.ts                 Contract storage (Supabase/Postgres)
     types.ts                 Shared types
   components/                SignaturePad, ContractDocument, SignatureDisplay, etc.
 ```
